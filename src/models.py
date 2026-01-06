@@ -7,8 +7,8 @@ db = SQLAlchemy()
 class User(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
     email: Mapped[str] = mapped_column(String(120), unique=True, nullable=False)
-    password: Mapped[str] = mapped_column(String(200), nullable=False)  # puse 200 por si uso hash largo
-    is_active: Mapped[bool] = mapped_column(Boolean(), default=True)  # por defecto activo
+    password: Mapped[str] = mapped_column(String(200), nullable=False)  
+    is_active: Mapped[bool] = mapped_column(Boolean(), default=True)  
 
     # esto es para que se vea bonito en la consola 
     def __repr__(self):
